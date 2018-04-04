@@ -47,15 +47,33 @@ describe "Branches API" do
 
   context "HTTP PATCH" do
     it "updates an existing branch" do
+      branch = create(:branch)
+      expect(branch.street).to eq("15013 Denver W Pkwy")
 
-      expect(Branch.all.count).to eq(0)
-
-      patch "/api/v1/branches/1?branch[street]=123%20Solar%20Way"
+      patch "/api/v1/branches/#{branch.id}?branch[street]=555%20Bright%20Way"
 
       expect(response).to be_success
-      expect(response.body).to eq("Branch was successfully created!")
+      new_branch = JSON.parse(response.body)
+      expect(new_branch['street']).to eq("555 Bright Way")
+      expect(Branch.last.street).to eq("555 Bright Way")
+    end
+  end
+
+  context "HTTP Delete" do
+    it "updates an existing branch" do
+      expect(Branch.all.count).to eq(0)
+      branch_1 = create(:branch, street: "22 Hunter Way")
+      branch_2 = create(:branch, street: "5505 Pleasing Palace Place")
+
+      expect(Branch.all.count).to eq(2)
+
+      delete "/api/v1/branches/#{branch_2.id}"
+
+      expect(response).to be_success
+      expect(response.body).to eq("Branch was successfully deleted!")
+      expect(Branch.last.street).to eq("22 Hunter Way")
       expect(Branch.all.count).to eq(1)
-      expect(Branch.first.street).to eq("123 Solar Way")
+
     end
   end
 end

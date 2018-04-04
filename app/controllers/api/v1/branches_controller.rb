@@ -18,6 +18,21 @@ class Api::V1::BranchesController < ApplicationController
     end
   end
 
+  def update
+    @branch = Branch.find(params[:id])
+    if @branch.update(branch_params)
+      render json: @branch
+    else
+      render json: "Something went wrong, please try again"
+    end
+  end
+
+  def destroy
+    @branch = Branch.find(params[:id])
+    @branch.destroy
+    render json: "Branch was successfully deleted!"
+  end
+
   private
     def branch_params
       params.require(:branch).permit(:id, :user_id, :street, :city, :state, :zipcode)
