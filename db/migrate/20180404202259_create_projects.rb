@@ -12,7 +12,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.float :system_carbon_g_per_kWh
       t.float :total_system_carbon_impact_g
       t.float :annual_production_kWh
-      t.integer :age_days
+      t.integer :age_days, :default => 1
       t.float :round_trip_miles
       t.string :status, :default => 'active'
       t.references :branch, foreign_key: true
