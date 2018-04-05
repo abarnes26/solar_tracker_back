@@ -1,21 +1,23 @@
-class JamBaseServices
-  def initialize(param)
-    @param = param
+class NrelServices
+  def initialize(zipcode)
+    @zipcode = zipcode
   end
 
-  def venue_lookup_zipcode
-    get_json("?zipCode=#{@param}&page=0&api_key=#{ENV['JAMBASE_KEY']}")
+  def irradiance_lookup
+    get_json("solar/solar_resource/v1.json?address=80003")
   end
 
-  def venue_lookup_name
-    get_json("?name=#{@param}&page=0&api_key=#{ENV['JAMBASE_KEY']}")
+  def energy_profile_lookup
+    get_json("cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=#{zipcode}")
   end
 
   private
+    attr_reader :zipcode
 
     def conn
-      Faraday.new(url: "http://api.jambase.com/venues") do |faraday|
-        faraday.adapter  Faraday.default_adapter
+      Faraday.new("https://developer.nrel.gov/api/") do |faraday|
+        faraday.headers['X-Api-Key'] = ENV['NREL_API_KEY']
+        faraday.adapter           Faraday.default_adapter
       end
     end
 
