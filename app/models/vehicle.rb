@@ -4,6 +4,4 @@ class Vehicle < ApplicationRecord
   has_many :branches, through: :branch_vehicles
   has_many :project_vehicles
   has_many :projects, through: :project_vehicles
-
-
 end
