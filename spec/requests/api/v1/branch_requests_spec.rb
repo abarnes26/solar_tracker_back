@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Branches API" do
   context "HTTP GET all" do
-    it "sends a list of customers" do
+    it "sends a list of branches" do
       create_list(:branch, 3)
 
       get '/api/v1/branches'
@@ -16,7 +16,7 @@ describe "Branches API" do
   end
 
   context "HTTP GET one" do
-    it "sends a list of customers" do
+    it "sends a list of branches" do
       branch_1 = create(:branch, street: "123 Solar Way")
       create(:branch, street: "123 Energy Drive")
       create(:branch, street: "123 Sunny Blvd")
@@ -60,7 +60,7 @@ describe "Branches API" do
   end
 
   context "HTTP Delete" do
-    it "updates an existing branch" do
+    it "deletes an existing branch" do
       expect(Branch.all.count).to eq(0)
       branch_1 = create(:branch, street: "22 Hunter Way")
       branch_2 = create(:branch, street: "5505 Pleasing Palace Place")
@@ -73,7 +73,6 @@ describe "Branches API" do
       expect(response.body).to eq("Branch was successfully deleted!")
       expect(Branch.last.street).to eq("22 Hunter Way")
       expect(Branch.all.count).to eq(1)
-
     end
   end
 end

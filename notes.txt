@@ -1,0 +1,10 @@
+# Arvada (NREL)
+# 391637000 kwh / year
+# 717312241 lbs ghg elec generation / year
+# => 1.8 lbs of carbon / kWh generated
+
+# Colorado (U.S Energy Information Administration)
+# 54,418,480,000 kWh / year generated
+# 34,802,861 tons co2/ year
+# 2204.62 lbs in a metric ton
+# => 1.4 lbs of carbon / kWh generated
