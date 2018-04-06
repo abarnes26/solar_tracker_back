@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404202710) do
+ActiveRecord::Schema.define(version: 20180406144824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "branch_pv_modules", force: :cascade do |t|
+    t.bigint "branch_id"
+    t.bigint "pv_module_id"
+    t.index ["branch_id"], name: "index_branch_pv_modules_on_branch_id"
+    t.index ["pv_module_id"], name: "index_branch_pv_modules_on_pv_module_id"
+  end
 
   create_table "branch_users", force: :cascade do |t|
     t.bigint "branch_id"
@@ -50,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180404202710) do
     t.string "zipcode"
     t.string "customer_name"
     t.float "size_kW"
+    t.integer "number_of_pv_modules"
     t.float "local_annual_irradiance"
     t.float "local_carbon_g_per_kWh"
     t.float "system_carbon_g_per_kWh"
@@ -59,7 +67,18 @@ ActiveRecord::Schema.define(version: 20180404202710) do
     t.float "round_trip_miles"
     t.string "status", default: "active"
     t.bigint "branch_id"
+    t.bigint "pv_module_id"
     t.index ["branch_id"], name: "index_projects_on_branch_id"
+    t.index ["pv_module_id"], name: "index_projects_on_pv_module_id"
+  end
+
+  create_table "pv_modules", force: :cascade do |t|
+    t.integer "output_w"
+    t.float "efficiency"
+    t.string "manufacturer"
+    t.string "model"
+    t.integer "width_mm"
+    t.integer "length_mm"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,6 +94,8 @@ ActiveRecord::Schema.define(version: 20180404202710) do
     t.integer "mpg"
   end
 
+  add_foreign_key "branch_pv_modules", "branches"
+  add_foreign_key "branch_pv_modules", "pv_modules"
   add_foreign_key "branch_users", "branches"
   add_foreign_key "branch_users", "users"
   add_foreign_key "branch_vehicles", "branches"
@@ -82,4 +103,5 @@ ActiveRecord::Schema.define(version: 20180404202710) do
   add_foreign_key "project_vehicles", "projects"
   add_foreign_key "project_vehicles", "vehicles"
   add_foreign_key "projects", "branches"
+  add_foreign_key "projects", "pv_modules"
 end

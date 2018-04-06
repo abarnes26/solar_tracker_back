@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Fri, 06 Apr 2018 16:00:51 GMT
+      - Fri, 06 Apr 2018 16:00:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -33,7 +33,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '993'
+      - '979'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -45,9 +45,9 @@ http_interactions:
       Etag:
       - W/"de92a076b29fca5d5d90d3387a98f695"
       X-Request-Id:
-      - f1a93ad0-71f0-468b-bad3-87de2dda25c4
+      - ba515956-e6fb-4f0d-b34d-64bd77ed3a1d
       X-Runtime:
-      - '0.005742'
+      - '0.005460'
       Age:
       - '0'
       Via:
@@ -61,7 +61,7 @@ http_interactions:
       string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
         2012"]},"inputs":{"address":"80003"},"outputs":{"avg_dni":{"annual":5.78,"monthly":{"jan":4.83,"feb":5.39,"mar":5.78,"apr":6.03,"may":5.92,"jun":6.8,"jul":6.76,"aug":5.97,"sep":6.47,"oct":5.6,"nov":5.1,"dec":4.75}},"avg_ghi":{"annual":4.58,"monthly":{"jan":2.42,"feb":3.4,"mar":4.55,"apr":5.51,"may":6.19,"jun":6.73,"jul":6.58,"aug":5.73,"sep":5.08,"oct":3.76,"nov":2.72,"dec":2.22}},"avg_lat_tilt":{"annual":5.53,"monthly":{"jan":4.62,"feb":5.38,"mar":5.85,"apr":5.88,"may":5.8,"jun":5.93,"jul":5.98,"aug":5.83,"sep":6.15,"oct":5.54,"nov":4.95,"dec":4.53}}}}'
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 16:00:51 GMT
+  recorded_at: Fri, 06 Apr 2018 16:00:58 GMT
 - request:
     method: get
     uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80003
@@ -85,11 +85,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Fri, 06 Apr 2018 16:00:51 GMT
+      - Fri, 06 Apr 2018 16:00:59 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '672'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Vary:
@@ -99,7 +99,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '992'
+      - '978'
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
@@ -116,9 +116,9 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - 0c763bf6-a173-4ffb-b2e0-fc85cb3a874f
+      - c3f7501c-0cb3-4ac8-ba7e-ad40f95d4653
       X-Runtime:
-      - '0.042020'
+      - '0.040462'
       X-Xss-Protection:
       - 1; mode=block
       Age:
@@ -131,7 +131,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"errors":[],"inputs":{"zip":"80003"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 16:00:51 GMT
+  recorded_at: Fri, 06 Apr 2018 16:00:59 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=3440%20W%20131st%20Ave%20Broomfield%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
@@ -153,9 +153,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 06 Apr 2018 16:00:52 GMT
+      - Fri, 06 Apr 2018 16:00:59 GMT
       Expires:
-      - Sat, 07 Apr 2018 16:00:52 GMT
+      - Sat, 07 Apr 2018 16:00:59 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -197,5 +197,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 16:00:52 GMT
+  recorded_at: Fri, 06 Apr 2018 16:00:59 GMT
 recorded_with: VCR 4.0.0

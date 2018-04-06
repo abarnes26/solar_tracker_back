@@ -5,7 +5,9 @@ FactoryBot.define do
     state "CO"
     zipcode "80003"
     customer_name "John Doe"
-    size_kW 7.92
+    size_kW 5.5
+    number_of_pv_modules 22
+    pv_module
     branch
   end
 end

@@ -1,37 +1,37 @@
 require 'rails_helper'
 
-describe "Projects API" do
+describe "Modules API" do
   context "HTTP GET all" do
-    it "sends a list of projects" do
-      VCR.use_cassette("get_all_projects") do
+    it "sends a list of pv_modules" do
+      VCR.use_cassette("get_all_pv_modules") do
 
-        create_list(:project, 3)
+        create_list(:pv_module, 3)
 
-        get '/api/v1/projects'
+        get '/api/v1/pv_modules'
 
         expect(response).to be_success
 
-        projects = JSON.parse(response.body)
+        pv_modules = JSON.parse(response.body)
 
-        expect(projects.count).to eq(3)
+        expect(pv_modules.count).to eq(3)
       end
     end
   end
 
   context "HTTP GET one" do
-    it "sends a list of projects" do
-      VCR.use_cassette("get_one_projects") do
-        project_1 = create(:project, customer_name: "Hal Iday")
-        create(:project, customer_name: "Toobe Young")
-        create(:project, customer_name: "Joseph")
+    it "sends a list of pv_modules" do
+      VCR.use_cassette("get_one_pv_modules") do
+        pv_module = create(:project, model: "TP 275w")
+        create(:pv_module, model: "TP 260w")
+        create(:pv_module, model: "TP 280w")
 
-        get "/api/v1/projects/#{project_1.id}"
+        get "/api/v1/pv_modules/#{pv_module.id}"
 
         expect(response).to be_success
 
-        project = JSON.parse(response.body)
+        pv_module_1 = JSON.parse(response.body)
 
-        expect(project['customer_name']).to eq("Hal Iday")
+        expect(pv_module_1['model']).to eq("TP 275w")
       end
     end
   end
@@ -41,11 +41,10 @@ describe "Projects API" do
       VCR.use_cassette("create_a_new_project") do
         branch = create(:branch)
         vehicle = create(:vehicle)
-        pv_moduel = create(:pv_module)
 
         expect(Project.all.count).to eq(0)
 
-        post "/api/v1/projects?project[street]=8279%20Iris%20St&project[city]=Arvada&project[state]=CO&project[zipcode]=80005&project[customer%5Fname]=Joseph&project[size%5FkW]=4&project[branch%5Fid]=#{branch.id}&vehicle[:id]=#{vehicle.id}&project[pv%5Fmodule%5Fid]=#{pv_moduel.id}"
+        post "/api/v1/pv_modules?project[street]=8279%20Iris%20St&project[city]=Arvada&project[state]=CO&project[zipcode]=80005&project[customer%5Fname]=Joseph&project[size%5FkW]=4&project[branch%5Fid]=#{branch.id}&vehicle[:id]=#{vehicle.id}"
 
         expect(response).to be_success
         expect(response.body).to eq("Project was successfully created!")
@@ -57,11 +56,11 @@ describe "Projects API" do
 
   context "HTTP PATCH" do
     it "updates an existing project" do
-      VCR.use_cassette("update_a_projects") do
+      VCR.use_cassette("update_a_pv_modules") do
         project = create(:project)
         expect(project.customer_name).to eq("John Doe")
 
-        patch "/api/v1/projects/#{project.id}?project[customer_name]=Hal%20Iday"
+        patch "/api/v1/pv_modules/#{project.id}?project[customer_name]=Hal%20Iday"
 
         expect(response).to be_success
         new_project = JSON.parse(response.body)
@@ -80,7 +79,7 @@ describe "Projects API" do
 
         expect(Project.all.count).to eq(2)
 
-        delete "/api/v1/projects/#{project_2.id}"
+        delete "/api/v1/pv_modules/#{project_2.id}"
 
         expect(response).to be_success
         expect(response.body).to eq("Project was successfully deleted!")
