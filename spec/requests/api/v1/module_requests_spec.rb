@@ -19,9 +19,9 @@ describe "Modules API" do
   end
 
   context "HTTP GET one" do
-    it "sends a list of pv_modules" do
+    it "sends a single pv_module" do
       VCR.use_cassette("get_one_pv_modules") do
-        pv_module = create(:project, model: "TP 275w")
+        pv_module = create(:pv_module, model: "TP 275w")
         create(:pv_module, model: "TP 260w")
         create(:pv_module, model: "TP 280w")
 
@@ -37,54 +37,54 @@ describe "Modules API" do
   end
 
   context "HTTP POST" do
-    it "creates a new project" do
-      VCR.use_cassette("create_a_new_project") do
+    it "creates a new module" do
+      VCR.use_cassette("create_a_new_pv_module") do
         branch = create(:branch)
-        vehicle = create(:vehicle)
 
-        expect(Project.all.count).to eq(0)
+        expect(PvModule.all.count).to eq(0)
 
-        post "/api/v1/pv_modules?project[street]=8279%20Iris%20St&project[city]=Arvada&project[state]=CO&project[zipcode]=80005&project[customer%5Fname]=Joseph&project[size%5FkW]=4&project[branch%5Fid]=#{branch.id}&vehicle[:id]=#{vehicle.id}"
+        post "/api/v1/pv_modules?pv_module[output%5Fw]=250&pv_module[manufacturer]=REC&pv_module[model]=250%20TP&pv_module[efficiency]=0%2E18&pv_module[width_mm]=997&pv_module[length_mm]=1675&branch[id]=#{branch.id}"
 
         expect(response).to be_success
-        expect(response.body).to eq("Project was successfully created!")
-        expect(Project.all.count).to eq(1)
-        expect(Project.first.customer_name).to eq("Joseph")
+        expect(response.body).to eq("PV Module was successfully created!")
+        expect(PvModule.all.count).to eq(1)
+        expect(BranchPvModule.all.count).to eq(1)
+        expect(PvModule.first.model).to eq("250 TP")
       end
     end
   end
 
   context "HTTP PATCH" do
-    it "updates an existing project" do
+    it "updates an existing pv_module" do
       VCR.use_cassette("update_a_pv_modules") do
-        project = create(:project)
-        expect(project.customer_name).to eq("John Doe")
+        pv_module = create(:pv_module)
+        expect(pv_module.manufacturer).to eq("REC")
 
-        patch "/api/v1/pv_modules/#{project.id}?project[customer_name]=Hal%20Iday"
+        patch "/api/v1/pv_modules/#{pv_module.id}?pv_module[manufacturer]=Sungevity"
 
         expect(response).to be_success
-        new_project = JSON.parse(response.body)
-        expect(new_project['customer_name']).to eq("Hal Iday")
-        expect(Project.last.customer_name).to eq("Hal Iday")
+        new_pv_module = JSON.parse(response.body)
+        expect(new_pv_module['manufacturer']).to eq("Sungevity")
+        expect(PvModule.last.manufacturer).to eq("Sungevity")
       end
     end
   end
 
   context "HTTP Delete" do
-    it "deletes an existing project" do
-      VCR.use_cassette("delete_a_project") do
-        expect(Project.all.count).to eq(0)
-        project_1 = create(:project, customer_name: "22 Hunter Way")
-        project_2 = create(:project, customer_name: "5505 Pleasing Palace Place")
+    it "deletes an existing pv_module" do
+      VCR.use_cassette("delete_a_pv_module") do
+        expect(PvModule.all.count).to eq(0)
+        pv_module_1 = create(:pv_module, manufacturer: "REC")
+        pv_module_2 = create(:pv_module, manufacturer: "Sungevity")
 
-        expect(Project.all.count).to eq(2)
+        expect(PvModule.all.count).to eq(2)
 
-        delete "/api/v1/pv_modules/#{project_2.id}"
+        delete "/api/v1/pv_modules/#{pv_module_2.id}"
 
         expect(response).to be_success
-        expect(response.body).to eq("Project was successfully deleted!")
-        expect(Project.last.customer_name).to eq("22 Hunter Way")
-        expect(Project.all.count).to eq(1)
+        expect(response.body).to eq("PV Module was successfully deleted!")
+        expect(PvModule.last.manufacturer).to eq("REC")
+        expect(PvModule.all.count).to eq(1)
       end
     end
   end

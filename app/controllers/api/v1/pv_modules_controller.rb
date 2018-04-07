@@ -11,7 +11,7 @@ class Api::V1::PvModulesController < ApplicationController
   def create
     @pv_module = PvModule.new(pv_module_params)
     if @pv_module.save
-      BranchPvModule.create(pv_module: @pv_module, branch: branch_params)
+      BranchPvModule.create(pv_module: @pv_module, branch_id: branch_params[:id])
       render json: "PV Module was successfully created!"
     else
       render json: "PV Module was not created, please try again"

@@ -14,6 +14,7 @@ class Project < ApplicationRecord
     assign_round_trip_miles
   end
 
+
   # irradiance is kWh/m2
   def assign_local_annual_irradiance
     self.local_annual_irradiance = (RetrieveIrradiance.new(self.zipcode).irradiance * 365).round(2)
@@ -21,10 +22,10 @@ class Project < ApplicationRecord
 
   # in this iteration, assuming solar modules are 1.5 m2, 14% eff, 240w panels
   def assign_annual_production_kWh
-    self.annual_production_kWh = ((self.local_annual_irradiance * 0.14) * (((self.size_kW * 1000)/ 240) * 1.5)).round(2)
+    self.annual_production_kWh = ((self.local_annual_irradiance * self.pv_module.efficiency) * (((self.size_kW * 1000)/ self.pv_module.output_w) * ((self.pv_module.width_mm.to_f * self.pv_module.length_mm)/10**6))).round(2)
   end
 
-  # '0.14' => module efficiency, '30' => lifespan of module in years,
+  # '30' => lifespan of module in years,
   # '787.05' => lbs of carbon by producing one module, 453.592 => grams in a lb
   def assign_system_carbon_kWh
     self.system_carbon_g_per_kWh = (453.592 / (((self.local_annual_irradiance * 0.14) * 30) / 787.05)).round(2)
