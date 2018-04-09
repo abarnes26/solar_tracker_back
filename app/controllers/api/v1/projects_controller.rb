@@ -38,7 +38,7 @@ class Api::V1::ProjectsController < ApplicationController
 
   private
     def project_params
-      params.require(:project).permit(:street, :city, :state, :zipcode, :customer_name, :size_kW, :pv_module_id, :branch_id, :vehicle_id)
+      params.require(:project).permit(:street, :city, :state, :zipcode, :customer_name, :size_kW, :pv_module_id, :branch_id, :vehicle_id, :number_of_pv_modules)
     end
 
     def vehicle_params

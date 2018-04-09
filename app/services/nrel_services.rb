@@ -4,7 +4,7 @@ class NrelServices
   end
 
   def irradiance_lookup
-    get_json("solar/solar_resource/v1.json?address=80003")
+    get_json("solar/solar_resource/v1.json?address=#{zipcode}")
   end
 
   def energy_profile_lookup
