@@ -7,8 +7,8 @@ describe Project do
 
       expect(project.local_annual_irradiance).to eq(2109.7)
       expect(project.local_carbon_g_per_kWh).to eq(830.79)
-      expect(project.system_carbon_g_per_kWh).to eq(40.29)
-      expect(project.annual_production_kWh).to eq(14620.22)
+      expect(project.system_carbon_g_per_kWh).to eq(31.34)
+      expect(project.annual_production_kWh).to eq(13951.74)
       expect(project.round_trip_miles).to eq(46.6)
     end
   end
