@@ -1,5 +1,7 @@
 class Api::V1::VehiclesController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: Vehicle.all
   end
