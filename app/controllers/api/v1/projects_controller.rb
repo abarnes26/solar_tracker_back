@@ -1,5 +1,7 @@
 class Api::V1::ProjectsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: Project.all
   end
