@@ -7,6 +7,7 @@ class CreatePvModules < ActiveRecord::Migration[5.1]
       t.string :model
       t.integer :width_mm
       t.integer :length_mm
+      t.references :branch, foreign_key: true
     end
   end
 end

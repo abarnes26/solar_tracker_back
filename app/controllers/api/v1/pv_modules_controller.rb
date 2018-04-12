@@ -10,8 +10,9 @@ class Api::V1::PvModulesController < ApplicationController
 
   def create
     @pv_module = PvModule.new(pv_module_params)
+    branch = Branch.find(params['branch_id'])
+    @pv_module.branch_id = branch.id
     if @pv_module.save
-      BranchPvModule.create(pv_module: @pv_module, branch_id: branch_params[:id])
       render json: "PV Module was successfully created!"
     else
       render json: "PV Module was not created, please try again"
@@ -38,9 +39,9 @@ class Api::V1::PvModulesController < ApplicationController
       params.require(:pv_module).permit(:output_w, :efficiency, :manufacturer, :model, :width_mm, :length_mm)
     end
 
-    def branch_params
-      params.require(:branch).permit(:id)
-    end
+    # def branch_params
+    #   params.require(:branch).permit(:id)
+    # end
 
 
 end

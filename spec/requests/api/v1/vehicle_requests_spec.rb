@@ -3,9 +3,12 @@ require 'rails_helper'
 describe "Vehicles API" do
   context "HTTP GET all" do
     it "sends a list of vehicles" do
-      create_list(:vehicle, 3)
+      branch = create(:branch)
+      create(:vehicle, branch: branch)
+      create(:vehicle, branch: branch)
+      create(:vehicle, branch: branch)
 
-      get '/api/v1/vehicles'
+      get "/api/v1/branches/#{branch.id}/vehicles"
 
       expect(response).to be_success
 
@@ -17,11 +20,12 @@ describe "Vehicles API" do
 
   context "HTTP GET one" do
     it "sends a list of vehicles" do
-      vehicle_1 = create(:vehicle, make: "Toyota")
-      create(:vehicle, make: "Mercedes")
-      create(:vehicle, make: "Honda")
+      branch = create(:branch)
+      vehicle_1 = create(:vehicle, make: "Toyota", branch: branch)
+      create(:vehicle, make: "Mercedes", branch: branch)
+      create(:vehicle, make: "Honda", branch: branch)
 
-      get "/api/v1/vehicles/#{vehicle_1.id}"
+      get "/api/v1/branches/#{branch.id}/vehicles/#{vehicle_1.id}"
 
       expect(response).to be_success
 
@@ -33,24 +37,26 @@ describe "Vehicles API" do
 
   context "HTTP POST" do
     it "creates a new vehicle" do
-
+      branch = create(:branch)
       expect(Vehicle.all.count).to eq(0)
 
-      post "/api/v1/vehicles?vehicle[make]=Ford&vehicle[model]=fusion&vehicle[mpg]=35"
+      post "/api/v1/branches/#{branch.id}/vehicles?vehicle[make]=Ford&vehicle[model]=fusion&vehicle[mpg]=35"
 
       expect(response).to be_success
       expect(response.body).to eq("Vehicle was successfully created!")
       expect(Vehicle.all.count).to eq(1)
+      expect(branch.vehicles.count).to eq(1)
       expect(Vehicle.first.make).to eq("Ford")
     end
   end
 
   context "HTTP PATCH" do
     it "updates an existing vehicle" do
-      vehicle = create(:vehicle)
+      branch = create(:branch)
+      vehicle = create(:vehicle, branch: branch)
       expect(vehicle.make).to eq("Mercedes")
 
-      patch "/api/v1/vehicles/#{vehicle.id}?vehicle[make]=Toyota"
+      patch "/api/v1/branches/#{branch.id}/vehicles/#{vehicle.id}?vehicle[make]=Toyota"
 
       expect(response).to be_success
       new_vehicle = JSON.parse(response.body)
@@ -61,13 +67,14 @@ describe "Vehicles API" do
 
   context "HTTP Delete" do
     it "deletes an existing vehicle" do
+      branch = create(:branch)
       expect(Vehicle.all.count).to eq(0)
-      vehicle_1 = create(:vehicle, make: "22 Hunter Way")
-      vehicle_2 = create(:vehicle, make: "5505 Pleasing Palace Place")
+      vehicle_1 = create(:vehicle, make: "22 Hunter Way", branch: branch)
+      vehicle_2 = create(:vehicle, make: "5505 Pleasing Palace Place", branch: branch)
 
       expect(Vehicle.all.count).to eq(2)
 
-      delete "/api/v1/vehicles/#{vehicle_2.id}"
+      delete "/api/v1/branches/#{branch.id}/vehicles/#{vehicle_2.id}"
 
       expect(response).to be_success
       expect(response.body).to eq("Vehicle was successfully deleted!")

@@ -10,30 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406144824) do
+ActiveRecord::Schema.define(version: 20180404202710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "branch_pv_modules", force: :cascade do |t|
-    t.bigint "branch_id"
-    t.bigint "pv_module_id"
-    t.index ["branch_id"], name: "index_branch_pv_modules_on_branch_id"
-    t.index ["pv_module_id"], name: "index_branch_pv_modules_on_pv_module_id"
-  end
 
   create_table "branch_users", force: :cascade do |t|
     t.bigint "branch_id"
     t.bigint "user_id"
     t.index ["branch_id"], name: "index_branch_users_on_branch_id"
     t.index ["user_id"], name: "index_branch_users_on_user_id"
-  end
-
-  create_table "branch_vehicles", force: :cascade do |t|
-    t.bigint "branch_id"
-    t.bigint "vehicle_id"
-    t.index ["branch_id"], name: "index_branch_vehicles_on_branch_id"
-    t.index ["vehicle_id"], name: "index_branch_vehicles_on_vehicle_id"
   end
 
   create_table "branches", force: :cascade do |t|
@@ -79,6 +65,8 @@ ActiveRecord::Schema.define(version: 20180406144824) do
     t.string "model"
     t.integer "width_mm"
     t.integer "length_mm"
+    t.bigint "branch_id"
+    t.index ["branch_id"], name: "index_pv_modules_on_branch_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,16 +80,16 @@ ActiveRecord::Schema.define(version: 20180406144824) do
     t.string "make"
     t.string "model"
     t.integer "mpg"
+    t.bigint "branch_id"
+    t.index ["branch_id"], name: "index_vehicles_on_branch_id"
   end
 
-  add_foreign_key "branch_pv_modules", "branches"
-  add_foreign_key "branch_pv_modules", "pv_modules"
   add_foreign_key "branch_users", "branches"
   add_foreign_key "branch_users", "users"
-  add_foreign_key "branch_vehicles", "branches"
-  add_foreign_key "branch_vehicles", "vehicles"
   add_foreign_key "project_vehicles", "projects"
   add_foreign_key "project_vehicles", "vehicles"
   add_foreign_key "projects", "branches"
   add_foreign_key "projects", "pv_modules"
+  add_foreign_key "pv_modules", "branches"
+  add_foreign_key "vehicles", "branches"
 end
