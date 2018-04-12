@@ -3,5 +3,6 @@ FactoryBot.define do
     make "Mercedes"
     model "Sprinter"
     mpg 20
+    branch
   end
 end

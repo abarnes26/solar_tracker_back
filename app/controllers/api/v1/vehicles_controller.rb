@@ -10,8 +10,9 @@ class Api::V1::VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
+    branch = Branch.find(params['branch_id'])
+    @vehicle.branch_id = branch.id
     if @vehicle.save
-      # BranchVehicle.create(branch: vehicle_params[:user_id], vehicle: @vehicle)
       render json: "Vehicle was successfully created!"
     else
       render json: "Vehicle was not created, please try again"
