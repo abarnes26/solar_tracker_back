@@ -18,6 +18,10 @@ Bundler.require(*Rails.groups)
 
 module SolarTrackerBack
   class Application < Rails::Application
+    config.action_dispatch.default_headers.merge!({
+      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Request-Method' => '*'
+  })
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
