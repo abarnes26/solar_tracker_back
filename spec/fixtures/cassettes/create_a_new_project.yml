@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 10 Apr 2018 15:15:37 GMT
+      - Thu, 12 Apr 2018 17:40:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -45,9 +45,9 @@ http_interactions:
       Etag:
       - W/"03c124de3c5f5b0791aee20fb4eb4199"
       X-Request-Id:
-      - 13639b1e-9f5b-464e-abfd-e6a81f925846
+      - c321273a-eccb-46bf-8b24-99445639525f
       X-Runtime:
-      - '0.006109'
+      - '0.232928'
       Age:
       - '0'
       Via:
@@ -61,7 +61,7 @@ http_interactions:
       string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
         2012"]},"inputs":{"address":"80005"},"outputs":{"avg_dni":{"annual":5.71,"monthly":{"jan":4.87,"feb":5.26,"mar":5.73,"apr":6.06,"may":5.92,"jun":6.72,"jul":6.64,"aug":5.73,"sep":6.32,"oct":5.64,"nov":5.09,"dec":4.56}},"avg_ghi":{"annual":4.53,"monthly":{"jan":2.42,"feb":3.33,"mar":4.51,"apr":5.48,"may":6.18,"jun":6.65,"jul":6.49,"aug":5.59,"sep":5.0,"oct":3.75,"nov":2.7,"dec":2.16}},"avg_lat_tilt":{"annual":5.46,"monthly":{"jan":4.63,"feb":5.24,"mar":5.79,"apr":5.85,"may":5.78,"jun":5.85,"jul":5.89,"aug":5.67,"sep":6.04,"oct":5.53,"nov":4.92,"dec":4.38}}}}'
     http_version: 
-  recorded_at: Tue, 10 Apr 2018 15:15:36 GMT
+  recorded_at: Thu, 12 Apr 2018 17:40:16 GMT
 - request:
     method: get
     uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80005
@@ -85,7 +85,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 10 Apr 2018 15:15:37 GMT
+      - Thu, 12 Apr 2018 17:40:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -116,9 +116,9 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - feff07a6-e20b-46c5-b9b1-0de2d081fe56
+      - 775b4ed4-cc03-41fc-b40b-1908dd39ee62
       X-Runtime:
-      - '0.039887'
+      - '0.041158'
       X-Xss-Protection:
       - 1; mode=block
       Age:
@@ -131,7 +131,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"errors":[],"inputs":{"zip":"80005"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
     http_version: 
-  recorded_at: Tue, 10 Apr 2018 15:15:37 GMT
+  recorded_at: Thu, 12 Apr 2018 17:40:17 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=8279%20Iris%20St%20Arvada%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
@@ -153,9 +153,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 10 Apr 2018 15:15:38 GMT
+      - Thu, 12 Apr 2018 17:40:18 GMT
       Expires:
-      - Wed, 11 Apr 2018 15:15:38 GMT
+      - Fri, 13 Apr 2018 17:40:18 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -197,5 +197,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Tue, 10 Apr 2018 15:15:37 GMT
+  recorded_at: Thu, 12 Apr 2018 17:40:18 GMT
 recorded_with: VCR 4.0.0
