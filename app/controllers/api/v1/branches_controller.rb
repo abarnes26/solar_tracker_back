@@ -11,7 +11,6 @@ class Api::V1::BranchesController < ApplicationController
   end
 
   def create
-    binding.pry
     @branch = Branch.new(branch_params)
     if @branch.save
       # BranchUser.create(user: branch_params[:user_id], branch: @branch)
