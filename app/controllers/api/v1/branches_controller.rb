@@ -1,5 +1,7 @@
 class Api::V1::BranchesController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: Branch.all
   end
@@ -9,6 +11,7 @@ class Api::V1::BranchesController < ApplicationController
   end
 
   def create
+    binding.pry
     @branch = Branch.new(branch_params)
     if @branch.save
       # BranchUser.create(user: branch_params[:user_id], branch: @branch)
