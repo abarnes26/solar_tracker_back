@@ -45,11 +45,13 @@ describe "Projects API" do
       VCR.use_cassette("create_a_new_project") do
         branch = create(:branch)
         vehicle = create(:vehicle)
-        pv_moduel = create(:pv_module)
+        pv_module = create(:pv_module)
+        moduleName = pv_module.manufacturer + '-' + pv_module.model
+        vehicleName = vehicle.make + '-' + vehicle.model
 
         expect(Project.all.count).to eq(0)
 
-        post "/api/v1/branches/#{branch.id}/projects?project[street]=8279%20Iris%20St&project[city]=Arvada&project[state]=CO&project[zipcode]=80005&project[customer%5Fname]=Joseph&project[size%5FkW]=4&project[branch%5Fid]=#{branch.id}&project[number_of_pv_modules]=22&vehicle[id]=#{vehicle.id}&project[pv%5Fmodule%5Fid]=#{pv_moduel.id}"
+        post "/api/v1/branches/#{branch.id}/projects?project[street]=8279%20Iris%20St&project[city]=Arvada&project[state]=CO&project[zipcode]=80005&project[customer%5Fname]=Joseph&project[size%5FkW]=4&project[branch%5Fid]=#{branch.id}&project[number_of_pv_modules]=22&project[vehicleName]=#{vehicleName}&project[moduleName]=#{moduleName}"
 
         expect(response).to be_success
         expect(response.body).to eq("Project was successfully created!")
