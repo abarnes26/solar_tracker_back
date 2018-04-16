@@ -2,7 +2,7 @@ class Project < ApplicationRecord
   validates_presence_of :street, :city, :state, :zipcode, :customer_name, :size_kW
   belongs_to :branch
   belongs_to :pv_module
-  has_many :project_vehicles
+  has_many :project_vehicles, dependent: :destroy
   has_many :vehicles, through: :project_vehicles
   before_save :calc_energy_values
 
