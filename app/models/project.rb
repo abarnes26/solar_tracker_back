@@ -147,6 +147,7 @@ class Project < ApplicationRecord
   end
 
   def assign_total_system_carbon_impact
-    self.total_system_carbon_impact_g = total_carbon_for_system_g
+    self.total_system_carbon_impact_g = total_carbon_for_system_g.round(2)
+    self.save!
   end
 end
