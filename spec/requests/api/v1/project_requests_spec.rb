@@ -62,7 +62,7 @@ describe "Projects API" do
   end
 
   context "HTTP PATCH" do
-    it "updates an existing project" do
+    it "updates an existing project's name" do
       VCR.use_cassette("update_a_projects") do
         branch = create(:branch)
         project = create(:project, branch: branch)
@@ -74,6 +74,23 @@ describe "Projects API" do
         new_project = JSON.parse(response.body)
         expect(new_project['customer_name']).to eq("Hal Iday")
         expect(Project.last.customer_name).to eq("Hal Iday")
+      end
+    end
+  end
+
+  context "HTTP PATCH" do
+    it "updates an existing project's status" do
+      VCR.use_cassette("update_a_projects_status") do
+        branch = create(:branch)
+        project = create(:project, branch: branch)
+        expect(project.customer_name).to eq("John Doe")
+
+        patch "/api/v1/branches/#{branch.id}/projects/#{project.id}?project[status]=complete"
+
+        expect(response).to be_success
+        new_project = JSON.parse(response.body)
+        expect(new_project['status']).to eq("complete")
+        expect(Project.last.status).to eq("complete")
       end
     end
   end

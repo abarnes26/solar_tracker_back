@@ -4,7 +4,7 @@ class Project < ApplicationRecord
   belongs_to :pv_module
   has_many :project_vehicles, dependent: :destroy
   has_many :vehicles, through: :project_vehicles
-  before_save :calc_energy_values
+  after_create :calc_energy_values
 
   def calc_energy_values
     assign_local_annual_irradiance
