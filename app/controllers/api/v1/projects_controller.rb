@@ -23,8 +23,7 @@ class Api::V1::ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    binding.pry
-    if @project.update!(project_params)
+    if @project.update(project_params)
       if project_params[:status] == 'complete'
         @project.assign_total_system_carbon_impact
       end
