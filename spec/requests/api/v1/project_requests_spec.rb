@@ -93,6 +93,37 @@ describe "Projects API" do
         expect(Project.last.status).to eq("complete")
       end
     end
+
+    it "is totals carbon impact once it is completed" do
+      VCR.use_cassette("project_model_total_carbon") do
+        branch = create(:branch)
+        project = create(:project, zipcode: 80003, branch: branch)
+
+        patch "/api/v1/branches/#{branch.id}/projects/#{project.id}?project[status]=complete"
+
+        expect(response).to be_success
+        new_project = JSON.parse(response.body)
+        expect(new_project['status']).to eq("complete")
+        expect(new_project['total_system_carbon_impact_g']).to eq(13117425.95)
+      end
+    end
+  end
+
+  context "HTTP PATCH" do
+    it "updates an existing project's age" do
+      VCR.use_cassette("update_a_projects_status") do
+        branch = create(:branch)
+        project = create(:project, branch: branch)
+        expect(project.age_days).to eq(1)
+
+        patch "/api/v1/branches/#{branch.id}/projects/#{project.id}?project[age_days]=3"
+
+        expect(response).to be_success
+        new_project = JSON.parse(response.body)
+        expect(new_project['age_days']).to eq(3)
+        expect(Project.last.age_days).to eq(3)
+      end
+    end
   end
 
   context "HTTP Delete" do

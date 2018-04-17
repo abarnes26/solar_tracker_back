@@ -23,403 +23,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 17 Apr 2018 18:36:00 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '645'
-      Connection:
-      - keep-alive
-      X-Ratelimit-Limit:
-      - '1000'
-      X-Ratelimit-Remaining:
-      - '947'
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"de92a076b29fca5d5d90d3387a98f695"
-      X-Request-Id:
-      - fcc4c5fa-30ba-4d7e-b410-5d01644b3cd4
-      X-Runtime:
-      - '0.005633'
-      Age:
-      - '0'
-      Via:
-      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
-      X-Cache:
-      - MISS
-      Strict-Transport-Security:
-      - max-age=31536000; preload
-    body:
-      encoding: UTF-8
-      string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
-        2012"]},"inputs":{"address":"80003"},"outputs":{"avg_dni":{"annual":5.78,"monthly":{"jan":4.83,"feb":5.39,"mar":5.78,"apr":6.03,"may":5.92,"jun":6.8,"jul":6.76,"aug":5.97,"sep":6.47,"oct":5.6,"nov":5.1,"dec":4.75}},"avg_ghi":{"annual":4.58,"monthly":{"jan":2.42,"feb":3.4,"mar":4.55,"apr":5.51,"may":6.19,"jun":6.73,"jul":6.58,"aug":5.73,"sep":5.08,"oct":3.76,"nov":2.72,"dec":2.22}},"avg_lat_tilt":{"annual":5.53,"monthly":{"jan":4.62,"feb":5.38,"mar":5.85,"apr":5.88,"may":5.8,"jun":5.93,"jul":5.98,"aug":5.83,"sep":6.15,"oct":5.54,"nov":4.95,"dec":4.53}}}}'
-    http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:00 GMT
-- request:
-    method: get
-    uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80003
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      X-Api-Key:
-      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - openresty
-      Date:
-      - Tue, 17 Apr 2018 18:36:01 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '672'
-      Connection:
-      - keep-alive
-      Vary:
-      - Accept-Encoding
-      - Accept-Encoding
-      - Accept-Encoding
-      X-Ratelimit-Limit:
-      - '1000'
-      X-Ratelimit-Remaining:
-      - '946'
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"6c7f4e49e5303368b846959e2e40d968"
-      Set-Cookie:
-      - BNI_cleap-persist=0000000000000000000000000c0811ac00005000; Path=/
-      Strict-Transport-Security:
-      - max-age=31536000; preload
-      - max-age=31536000; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-      X-Request-Id:
-      - efedc969-c02f-4eb3-9a33-495db6706bc3
-      X-Runtime:
-      - '0.067329'
-      X-Xss-Protection:
-      - 1; mode=block
-      Age:
-      - '0'
-      Via:
-      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
-      X-Cache:
-      - MISS
-    body:
-      encoding: ASCII-8BIT
-      string: '{"errors":[],"inputs":{"zip":"80003"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
-    http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:01 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=3440%20W%20131st%20Ave%20Broomfield%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 17 Apr 2018 18:36:01 GMT
-      Expires:
-      - Wed, 18 Apr 2018 18:36:01 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Server:
-      - mafe
-      Content-Length:
-      - '252'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alt-Svc:
-      - hq=":443"; ma=2592000; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443";
-        ma=2592000; v="42,41,39,35"
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-           "destination_addresses" : [ "3440 W 131st Ave, Broomfield, CO 80020, USA" ],
-           "origin_addresses" : [ "15013 Denver W Pkwy, Golden, CO 80401, USA" ],
-           "rows" : [
-              {
-                 "elements" : [
-                    {
-                       "distance" : {
-                          "text" : "23.3 mi",
-                          "value" : 37523
-                       },
-                       "duration" : {
-                          "text" : "30 mins",
-                          "value" : 1776
-                       },
-                       "status" : "OK"
-                    }
-                 ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:01 GMT
-- request:
-    method: get
-    uri: https://developer.nrel.gov/api/solar/solar_resource/v1.json?address=80003
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      X-Api-Key:
-      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - openresty
-      Date:
-      - Tue, 17 Apr 2018 18:36:01 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '645'
-      Connection:
-      - keep-alive
-      X-Ratelimit-Limit:
-      - '1000'
-      X-Ratelimit-Remaining:
-      - '945'
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"de92a076b29fca5d5d90d3387a98f695"
-      X-Request-Id:
-      - d6033024-2cca-4a4c-a05a-251283ac75b4
-      X-Runtime:
-      - '0.006444'
-      Age:
-      - '0'
-      Via:
-      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
-      X-Cache:
-      - MISS
-      Strict-Transport-Security:
-      - max-age=31536000; preload
-    body:
-      encoding: UTF-8
-      string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
-        2012"]},"inputs":{"address":"80003"},"outputs":{"avg_dni":{"annual":5.78,"monthly":{"jan":4.83,"feb":5.39,"mar":5.78,"apr":6.03,"may":5.92,"jun":6.8,"jul":6.76,"aug":5.97,"sep":6.47,"oct":5.6,"nov":5.1,"dec":4.75}},"avg_ghi":{"annual":4.58,"monthly":{"jan":2.42,"feb":3.4,"mar":4.55,"apr":5.51,"may":6.19,"jun":6.73,"jul":6.58,"aug":5.73,"sep":5.08,"oct":3.76,"nov":2.72,"dec":2.22}},"avg_lat_tilt":{"annual":5.53,"monthly":{"jan":4.62,"feb":5.38,"mar":5.85,"apr":5.88,"may":5.8,"jun":5.93,"jul":5.98,"aug":5.83,"sep":6.15,"oct":5.54,"nov":4.95,"dec":4.53}}}}'
-    http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:02 GMT
-- request:
-    method: get
-    uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80003
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      X-Api-Key:
-      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - openresty
-      Date:
-      - Tue, 17 Apr 2018 18:36:02 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '672'
-      Connection:
-      - keep-alive
-      Vary:
-      - Accept-Encoding
-      - Accept-Encoding
-      - Accept-Encoding
-      X-Ratelimit-Limit:
-      - '1000'
-      X-Ratelimit-Remaining:
-      - '944'
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"6c7f4e49e5303368b846959e2e40d968"
-      Set-Cookie:
-      - BNI_cleap-persist=0000000000000000000000000c0811ac00005000; Path=/
-      Strict-Transport-Security:
-      - max-age=31536000; preload
-      - max-age=31536000; preload
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-      X-Request-Id:
-      - 85fd2d79-b633-4718-ab07-c8feef70ed4d
-      X-Runtime:
-      - '0.036523'
-      X-Xss-Protection:
-      - 1; mode=block
-      Age:
-      - '0'
-      Via:
-      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
-      X-Cache:
-      - MISS
-    body:
-      encoding: ASCII-8BIT
-      string: '{"errors":[],"inputs":{"zip":"80003"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
-    http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:02 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=3440%20W%20131st%20Ave%20Broomfield%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 17 Apr 2018 18:36:02 GMT
-      Expires:
-      - Wed, 18 Apr 2018 18:36:02 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Vary:
-      - Accept-Language
-      Server:
-      - mafe
-      Content-Length:
-      - '252'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Alt-Svc:
-      - hq=":443"; ma=2592000; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443";
-        ma=2592000; v="42,41,39,35"
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-           "destination_addresses" : [ "3440 W 131st Ave, Broomfield, CO 80020, USA" ],
-           "origin_addresses" : [ "15013 Denver W Pkwy, Golden, CO 80401, USA" ],
-           "rows" : [
-              {
-                 "elements" : [
-                    {
-                       "distance" : {
-                          "text" : "23.3 mi",
-                          "value" : 37523
-                       },
-                       "duration" : {
-                          "text" : "30 mins",
-                          "value" : 1776
-                       },
-                       "status" : "OK"
-                    }
-                 ]
-              }
-           ],
-           "status" : "OK"
-        }
-    http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:02 GMT
-- request:
-    method: get
-    uri: https://developer.nrel.gov/api/solar/solar_resource/v1.json?address=80003
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      X-Api-Key:
-      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - openresty
-      Date:
-      - Tue, 17 Apr 2018 18:36:03 GMT
+      - Tue, 17 Apr 2018 18:36:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -432,7 +36,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '943'
+      - '941'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -444,9 +48,9 @@ http_interactions:
       Etag:
       - W/"de92a076b29fca5d5d90d3387a98f695"
       X-Request-Id:
-      - f7918eea-528f-46b4-8cde-74aa290d8c98
+      - 410eec0b-c206-4327-b6b2-400db816edad
       X-Runtime:
-      - '0.007925'
+      - '0.005965'
       Age:
       - '0'
       Via:
@@ -460,7 +64,7 @@ http_interactions:
       string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
         2012"]},"inputs":{"address":"80003"},"outputs":{"avg_dni":{"annual":5.78,"monthly":{"jan":4.83,"feb":5.39,"mar":5.78,"apr":6.03,"may":5.92,"jun":6.8,"jul":6.76,"aug":5.97,"sep":6.47,"oct":5.6,"nov":5.1,"dec":4.75}},"avg_ghi":{"annual":4.58,"monthly":{"jan":2.42,"feb":3.4,"mar":4.55,"apr":5.51,"may":6.19,"jun":6.73,"jul":6.58,"aug":5.73,"sep":5.08,"oct":3.76,"nov":2.72,"dec":2.22}},"avg_lat_tilt":{"annual":5.53,"monthly":{"jan":4.62,"feb":5.38,"mar":5.85,"apr":5.88,"may":5.8,"jun":5.93,"jul":5.98,"aug":5.83,"sep":6.15,"oct":5.54,"nov":4.95,"dec":4.53}}}}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:03 GMT
+  recorded_at: Tue, 17 Apr 2018 18:36:04 GMT
 - request:
     method: get
     uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80003
@@ -484,7 +88,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 17 Apr 2018 18:36:03 GMT
+      - Tue, 17 Apr 2018 18:36:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -498,7 +102,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '943'
+      - '940'
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
@@ -515,13 +119,13 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - 631c9bc3-b73b-47b6-8033-4cbfaa775033
+      - 05ac7c8b-4ae2-4e6a-888e-4d0a867aed20
       X-Runtime:
-      - '0.038266'
+      - '0.037099'
       X-Xss-Protection:
       - 1; mode=block
       Age:
-      - '0'
+      - '1'
       Via:
       - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
       X-Cache:
@@ -530,7 +134,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"errors":[],"inputs":{"zip":"80003"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:04 GMT
+  recorded_at: Tue, 17 Apr 2018 18:36:05 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=3440%20W%20131st%20Ave%20Broomfield%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
@@ -552,9 +156,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 17 Apr 2018 18:36:04 GMT
+      - Tue, 17 Apr 2018 18:36:05 GMT
       Expires:
-      - Wed, 18 Apr 2018 18:36:04 GMT
+      - Wed, 18 Apr 2018 18:36:05 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -596,5 +200,401 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 18:36:04 GMT
+  recorded_at: Tue, 17 Apr 2018 18:36:05 GMT
+- request:
+    method: get
+    uri: https://developer.nrel.gov/api/solar/solar_resource/v1.json?address=80003
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 17 Apr 2018 18:36:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '645'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '939'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"de92a076b29fca5d5d90d3387a98f695"
+      X-Request-Id:
+      - 705238a3-2234-4112-819b-9bd206ff9e73
+      X-Runtime:
+      - '0.006328'
+      Age:
+      - '0'
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Cache:
+      - MISS
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+    body:
+      encoding: UTF-8
+      string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
+        2012"]},"inputs":{"address":"80003"},"outputs":{"avg_dni":{"annual":5.78,"monthly":{"jan":4.83,"feb":5.39,"mar":5.78,"apr":6.03,"may":5.92,"jun":6.8,"jul":6.76,"aug":5.97,"sep":6.47,"oct":5.6,"nov":5.1,"dec":4.75}},"avg_ghi":{"annual":4.58,"monthly":{"jan":2.42,"feb":3.4,"mar":4.55,"apr":5.51,"may":6.19,"jun":6.73,"jul":6.58,"aug":5.73,"sep":5.08,"oct":3.76,"nov":2.72,"dec":2.22}},"avg_lat_tilt":{"annual":5.53,"monthly":{"jan":4.62,"feb":5.38,"mar":5.85,"apr":5.88,"may":5.8,"jun":5.93,"jul":5.98,"aug":5.83,"sep":6.15,"oct":5.54,"nov":4.95,"dec":4.53}}}}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 18:36:05 GMT
+- request:
+    method: get
+    uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80003
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 17 Apr 2018 18:36:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '672'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '938'
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"6c7f4e49e5303368b846959e2e40d968"
+      Set-Cookie:
+      - BNI_cleap-persist=000000000000000000000000f60811ac00005000; Path=/
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 96988c33-5fa3-4622-8699-f6cb126dba91
+      X-Runtime:
+      - '0.036255'
+      X-Xss-Protection:
+      - 1; mode=block
+      Age:
+      - '1'
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[],"inputs":{"zip":"80003"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 18:36:06 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=3440%20W%20131st%20Ave%20Broomfield%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 17 Apr 2018 18:36:06 GMT
+      Expires:
+      - Wed, 18 Apr 2018 18:36:06 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Server:
+      - mafe
+      Content-Length:
+      - '252'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443";
+        ma=2592000; v="42,41,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "destination_addresses" : [ "3440 W 131st Ave, Broomfield, CO 80020, USA" ],
+           "origin_addresses" : [ "15013 Denver W Pkwy, Golden, CO 80401, USA" ],
+           "rows" : [
+              {
+                 "elements" : [
+                    {
+                       "distance" : {
+                          "text" : "23.3 mi",
+                          "value" : 37523
+                       },
+                       "duration" : {
+                          "text" : "30 mins",
+                          "value" : 1776
+                       },
+                       "status" : "OK"
+                    }
+                 ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 18:36:06 GMT
+- request:
+    method: get
+    uri: https://developer.nrel.gov/api/solar/solar_resource/v1.json?address=80003
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 17 Apr 2018 18:36:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '645'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '937'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"de92a076b29fca5d5d90d3387a98f695"
+      X-Request-Id:
+      - 4562b4a8-6753-4356-b29c-13407aecf2dd
+      X-Runtime:
+      - '0.006785'
+      Age:
+      - '0'
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Cache:
+      - MISS
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+    body:
+      encoding: UTF-8
+      string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
+        2012"]},"inputs":{"address":"80003"},"outputs":{"avg_dni":{"annual":5.78,"monthly":{"jan":4.83,"feb":5.39,"mar":5.78,"apr":6.03,"may":5.92,"jun":6.8,"jul":6.76,"aug":5.97,"sep":6.47,"oct":5.6,"nov":5.1,"dec":4.75}},"avg_ghi":{"annual":4.58,"monthly":{"jan":2.42,"feb":3.4,"mar":4.55,"apr":5.51,"may":6.19,"jun":6.73,"jul":6.58,"aug":5.73,"sep":5.08,"oct":3.76,"nov":2.72,"dec":2.22}},"avg_lat_tilt":{"annual":5.53,"monthly":{"jan":4.62,"feb":5.38,"mar":5.85,"apr":5.88,"may":5.8,"jun":5.93,"jul":5.98,"aug":5.83,"sep":6.15,"oct":5.54,"nov":4.95,"dec":4.53}}}}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 18:36:06 GMT
+- request:
+    method: get
+    uri: https://developer.nrel.gov/api/cleap/v1/energy_expenditures_and_ghg_by_sector.json?zip=80003
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - BkgmGhQer1SfUO2xgYHj2v55FU8z3vlOL5IyEFzK
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 17 Apr 2018 18:36:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '936'
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"6c7f4e49e5303368b846959e2e40d968"
+      Set-Cookie:
+      - BNI_cleap-persist=0000000000000000000000000c0811ac00005000; Path=/
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 2b4c4367-9724-453e-bcd9-abbd9ded58a0
+      X-Runtime:
+      - '0.038267'
+      X-Xss-Protection:
+      - 1; mode=block
+      Age:
+      - '1'
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[],"inputs":{"zip":"80003"},"metadata":{"version":"1.0.0"},"result":{"Arvada":{"residential":{"housing_units":44148,"total_pop":106196,"elec_1kdollars":46335,"elec_mwh":391637,"gas_1kdollars":26791,"gas_mcf":3457116,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":717312241,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":415001510,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2320,"elec_1kdollars":28294,"elec_mwh":284709,"gas_1kdollars":6162,"gas_mcf":867189,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":521466201,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":104099720,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":134,"elec_1kdollars":7383,"elec_mwh":101592,"gas_1kdollars":630,"gas_mcf":268999,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":186073290,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":32291364,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}},"Westminster":{"residential":{"housing_units":43692,"total_pop":106150,"elec_1kdollars":44197,"elec_mwh":367787,"gas_1kdollars":27099,"gas_mcf":3496799,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":673629195,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":1093083506,"gas_lb_ghg":419765164,"gas_min_lb_ghg":240313464,"gas_max_lb_ghg":480626929},"commercial":{"num_establishments":2555,"elec_1kdollars":33795,"elec_mwh":336393,"gas_1kdollars":7420,"gas_mcf":1044483,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":616128772,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":972749079,"gas_lb_ghg":125382562,"gas_min_lb_ghg":1200,"gas_max_lb_ghg":163834266},"industrial":{"num_establishments":74,"elec_1kdollars":5943,"elec_mwh":72410,"gas_1kdollars":371,"gas_mcf":158218,"elec_1kdollars_bin_min":null,"elec_1kdollars_bin_max":null,"elec_mwh_bin_min":null,"elec_mwh_bin_max":null,"gas_1kdollars_bin_min":null,"gas_1kdollars_bin_max":null,"gas_mcf_bin_min":null,"gas_mcf_bin_max":null,"elec_lb_ghg":132624291,"elec_min_lb_ghg":18316,"elec_max_lb_ghg":2153198677,"gas_lb_ghg":18992915,"gas_min_lb_ghg":7683,"gas_max_lb_ghg":1441016479}}}}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 18:36:07 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/distancematrix/json?destinations=3440%20W%20131st%20Ave%20Broomfield%20CO&key=AIzaSyBQAaYmOjUqoZjoJlRuh0PpisLLsTzsDcg&origins=15013%20Denver%20W%20Pkwy%20Golden%20CO&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 17 Apr 2018 18:36:07 GMT
+      Expires:
+      - Wed, 18 Apr 2018 18:36:07 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Server:
+      - mafe
+      Content-Length:
+      - '252'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443";
+        ma=2592000; v="42,41,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "destination_addresses" : [ "3440 W 131st Ave, Broomfield, CO 80020, USA" ],
+           "origin_addresses" : [ "15013 Denver W Pkwy, Golden, CO 80401, USA" ],
+           "rows" : [
+              {
+                 "elements" : [
+                    {
+                       "distance" : {
+                          "text" : "23.3 mi",
+                          "value" : 37523
+                       },
+                       "duration" : {
+                          "text" : "30 mins",
+                          "value" : 1776
+                       },
+                       "status" : "OK"
+                    }
+                 ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 18:36:07 GMT
 recorded_with: VCR 4.0.0

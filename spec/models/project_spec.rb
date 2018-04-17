@@ -12,5 +12,4 @@ describe Project do
       expect(project.round_trip_miles).to eq(46.6)
     end
   end
-
 end
