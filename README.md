@@ -36,8 +36,6 @@ The database relationships in this project represent those of a typical solar en
 
 ### Relationship Endpoints
 
-branches", only: [:create, :update, :index, :show, :destroy]
-
 #### Branches
 
 ```POST /api/v1/branches/``` creates a branch with the required information (see schema above)
