@@ -100,7 +100,7 @@ The database relationships in this project represent those of a typical solar en
 
 
 ## Credits
-Built with Ruby on Rails and Postgresql by Alex Barnes
+Built with Ruby on Rails and PostgreSQL by Alex Barnes
 
 
 
