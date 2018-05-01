@@ -1,5 +1,4 @@
 # Solar Carbon Tracker - Back End
-## (Turing Capstone)
 
 ## Goal of this Project
 - Build an API that will serve solar data to the front end
@@ -7,24 +6,6 @@
 - Users can access data relating to business intelligence and basic model relationships.
 - All endpoints will return JSON data
 - All endpoints should be exposed under an api and version (v1) namespace (e.g. /api/v1/branches/1/vehicles)
-
-## Getting Started
-To get started, clone down this reposotory and run the following command - 
-```
-bundle
-```
-from the command line.  Once the folder is bundled run the following command - 
-```
-rails db:setup
-```
-
-### Testing
-
-This project has it's own internal set of tests to maintain structure and functionality. Once you have set up your database, these tests can be accessed by running the following command -
-
-```
-rspec
-```
 
 ## An Overview of the data relationships
 
@@ -97,6 +78,24 @@ The database relationships in this project represent those of a typical solar en
 ```PATCH /api/v1/branches/:id/projects/:id``` updates specified attribute of a single project with the given id
 
 ```DELETE /api/v1/branches/:id/projects/:id``` removes a single project from the database
+
+## Getting Started
+To get started, clone down this reposotory and run the following command - 
+```
+bundle
+```
+from the command line.  Once the folder is bundled run the following command - 
+```
+rails db:setup
+```
+
+### Testing
+
+This project has it's own internal set of tests to maintain structure and functionality. Once you have set up your database, these tests can be accessed by running the following command -
+
+```
+rspec
+```
 
 
 ## Credits
